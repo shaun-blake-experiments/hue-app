@@ -1,0 +1,45 @@
+<form class="form-horizontal well well-lg">
+	<fieldset>
+	
+	<!-- Form Name -->
+	<legend><i class="fa fa-lightbulb-o fa-lg"></i> Hue Settings</legend>
+	<div ng-show="status.hueState == HUE_STATES.NOT_AUTHORIZED || status.hueState == HUE_STATES.AUTHORIZING">
+		<p>This application requires authorization from the Hub<p>
+		<button type="button" class="btn btn-success" ng-click="authorizeHue()" ng-show="status.hueState == HUE_STATES.NOT_AUTHORIZED">Authorize</button>
+		<button type="button" class="btn btn-success" ng-click="hueButtonPressed()" ng-show="status.hueState == HUE_STATES.AUTHORIZING">I have Pressed the Button</button>
+		<div class="alert alert-warning" ng-show="status.hueState == HUE_STATES.AUTHORIZING">
+			<p><strong>Authorizing</strong> Press the button on the center of the hub then come back and press the button below...  <a href class="alert-link" ng-click="cancelAuthorizeHue()">Cancel Authorization</a></p>
+		</div>
+	</div>
+	
+	<!-- Text input-->
+	<div class="control-group">
+		<label class="control-label" for="hueIpAddress">Hue IP Address</label>
+		<div class="controls">
+			<input id="hueIpAddress" name="hueIpAddress" ng-model="settings.hueIpAddress" type="text" placeholder="XXX.XXX.XXX.XXX" class="input-xlarge" required="required" size="15" maxlength="15" pattern="\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}">
+		<p class="help-block">The IP Address of the Hue Hub.</p>
+		</div>
+	</div>
+	
+	<!-- Text input-->
+	<div class="control-group">
+		<label class="control-label" for="inboundHueLightNumber">Inbound Hue Light Number</label>
+			<div class="controls">
+			<input id="inboundHueLightNumber" name="inboundHueLightNumber"  ng-model="settings.inboundHueLightNumber" type="number" placeholder="1" class="input-xlarge" required="required" pattern="\d{1,3}" style="width:4em;">
+			<p class="help-block">The number of the Hue light to display the inbound traffic status.</p>
+		</div>
+	</div>
+	
+	<!-- Text input-->
+	<div class="control-group">
+		<label class="control-label" for="outboundHueLightNumber">Outbound Hue Light Number</label>
+		<div class="controls">
+			<input id="outboundHueLightNumber" name="outboundHueLightNumber" ng-model="settings.outboundHueLightNumber" type="number" placeholder="2" class="input-xlarge" required="required" pattern="\d{1,3}" style="width:4em;">
+			<p class="help-block">The number of the Hue light to display the outbound traffic status.</p>
+		</div>
+	</div>
+	
+	<button type="button" class="btn btn-primary" ng-click="showPage('status')">Save Settings</button>
+	
+	</fieldset>
+</form>

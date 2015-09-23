@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+  "name": "Network Traffic Monitor",
+  "version": "1",
+  "app": {
+    "background": {
+      "scripts": ["js/main.js", "js/third-party/angular.min.js"],
+      "persistent": false
+    }
+  },
+  "permissions": ["identity", "storage", "alarms", "https://soaregistry-test.byu.edu/", "https://cas.byu.edu/", "https://nit.byu.edu/"],
+  "icons": { "128": "images/icon.png" }
+}

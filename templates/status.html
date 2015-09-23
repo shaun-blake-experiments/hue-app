@@ -1,0 +1,31 @@
+<h1 class="page-header"><i class="fa fa-exchange fa-lg"></i> Network Traffic Status</h1>
+<div class="row placeholders">
+	<div class="col-xs-6 col-6 placeholder">
+		<!--<img src="js/third-party/holder.js/400x400/auto/#df2e1b:#fff/text:Inbound" class="img-responsive" alt="Inbound Traffic Critical">
+		<img src="js/third-party/holder.js/400x400/auto/#df2e1b:#fff/text:Outbound" class="img-responsive" alt="Inbound Traffic Critical">
+		<img src="js/third-party/holder.js/400x400/auto/#13987e:#fff/text:Inbound" class="img-responsive" alt="Inbound Traffic Critical">
+		<img src="js/third-party/holder.js/400x400/auto/#13987e:#fff/text:Outbound" class="img-responsive" alt="Inbound Traffic Critical">
+		<img src="js/third-party/holder.js/400x400/auto/#d2850b:#fff/text:Inbound" class="img-responsive" alt="Inbound Traffic Critical">
+		<img src="js/third-party/holder.js/400x400/auto/#d2850b:#fff/text:Outbound" class="img-responsive" alt="Inbound Traffic Critical">-->
+		<img src="images/inbound-red.svg" class="img-responsive" alt="Inbound Traffic Critical" ng-show="shouldShowStatus('inbound', STATUS_COLORS.CRITICAL)">
+		<img src="images/inbound-yellow.svg" class="img-responsive" alt="Inbound Traffic Warning" ng-show="shouldShowStatus('inbound', STATUS_COLORS.WARNING)">
+		<img src="images/inbound-green.svg" class="img-responsive" alt="Inbound Traffic Good" ng-show="shouldShowStatus('inbound', STATUS_COLORS.GOOD)">
+		<h4> {{status.lastestInboundMetric.decimal_value}} {{status.inboundUnitOfMeasure}}</h4>
+		<span class="text-muted">
+			Critical Threshold - {{status.inboundCriticalThreshold}} {{status.inboundUnitOfMeasure}}
+			<br/>
+			Warning Threshold - {{status.inboundWarningThreshold}} {{status.inboundUnitOfMeasure}}
+		</span>
+	</div>
+	<div class="col-xs-6 col-6 placeholder">
+		<img src="images/outbound-red.svg" class="img-responsive" alt="Outbound Traffic Critical" ng-show="shouldShowStatus('outbound', STATUS_COLORS.CRITICAL)">
+		<img src="images/outbound-yellow.svg" class="img-responsive" alt="Outbound Traffic Warning" ng-show="shouldShowStatus('outbound', STATUS_COLORS.WARNING)">
+		<img src="images/outbound-green.svg" class="img-responsive" alt="Outbound Traffic Good" ng-show="shouldShowStatus('outbound', STATUS_COLORS.GOOD)">
+		<h4>Outbound {{status.lastestOutboundMetric.decimal_value}} {{status.outboundUnitOfMeasure}}</h4>
+		<span class="text-muted">
+			Critical Threshold - {{status.outboundCriticalThreshold}} {{status.outboundUnitOfMeasure}}
+			<br/>
+			Warning Threshold - {{status.outboundWarningThreshold}} {{status.outboundUnitOfMeasure}}
+		</span>
+	</div>
+</div>

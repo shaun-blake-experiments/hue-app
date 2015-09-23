@@ -1,0 +1,33 @@
+<p style="float:right;" ng-show="user.loggingIn">
+	<span class="label label-success" >
+		<i class="fa fa-sign-in fa-lg fa-spin"></i>
+	</span>
+</p>
+<form class="form-horizontal" ng-submit="handleLogin()">
+	<fieldset ng-disabled="user.loggingIn">
+	
+	<!-- Form Name -->
+	<legend>Log In with your BYU Net ID and Password</legend>
+	
+	<!-- Text input-->
+	<div class="control-group">
+		<label class="control-label" for="netid">Net ID</label>
+		<div class="controls">
+			<input id="netid" name="netid" ng-model="user.netid" type="text" placeholder="Net ID" class="input-xlarge" required="required">
+		<p class="help-block">Your myBYU Net ID.</p>
+		</div>
+	</div>
+	
+	<!-- Password input-->
+	<div class="control-group">
+		<label class="control-label" for="password">Password</label>
+		<div class="controls">
+			<input id="password" name="password" ng-model="user.password" type="password" class="input-xlarge" required="required">
+		<p class="help-block">Your myBYU password.</p>
+		</div>
+	</div>
+	
+	<button type="submit" class="btn btn-primary">Login</button>
+	
+	</fieldset>
+</form>

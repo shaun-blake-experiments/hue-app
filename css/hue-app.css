@@ -1,0 +1,32 @@
+html {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+/* ng-show/ng-hide animations */
+.fade-animate {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+  opacity:1;
+}
+
+.fade-animate.ng-hide {
+  opacity:0;
+}
+
+.fade-animate.ng-hide-add, .fade-animate.ng-hide-remove {
+  /* this needs to be here to make it visible during the animation
+     since the .ng-hide class is already on the element rendering
+     it as hidden. */
+  display:block!important;
+}
+
+.status-label {
+	float:right;
+	margin-right:20px;
+	margin-top:10px;
+	clear:both;
+}
+.spinner {
+	clear:none;
+}
